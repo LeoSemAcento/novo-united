@@ -1,0 +1,5 @@
+telethon
+aiohttp
+asyncio
+PySimpleGUI
+PyInstaller
