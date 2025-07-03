@@ -4,16 +4,25 @@ import json
 import csv
 import asyncio
 from telethon import TelegramClient
-from telethon.tl.types import MessageMediaPhoto, MessageMediaDocument, User, PeerChannel
+from telethon.tl.types import (
+    MessageMediaPhoto,
+    MessageMediaDocument,
+    User,
+    PeerChannel,
+    ForumTopic,
+)
+from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors import FloodWaitError, RPCError
 import aiohttp
 import sys
 import re
+from datetime import datetime
+
 
 def display_ascii_art():
     WHITE = "\033[97m"
     RESET = "\033[0m"
-    
+
     art = r"""
  _                   ___                  
 | |                 / _ \                 
@@ -24,95 +33,113 @@ def display_ascii_art():
                          | |   | |        
                          |_|   |_|        
 """
-    
+
     print(WHITE + art + RESET)
+
 
 display_ascii_art()
 
-STATE_FILE = 'state.json'
+STATE_FILE = "state.json"
+
 
 def load_state():
     if os.path.exists(STATE_FILE):
-        with open(STATE_FILE, 'r') as f:
+        with open(STATE_FILE, "r") as f:
             return json.load(f)
     return {
-        'api_id': None,
-        'api_hash': None,
-        'phone': None,
-        'channels': {},
-        'scrape_media': True,
+        "api_id": None,
+        "api_hash": None,
+        "phone": None,
+        "channels": {},
+        "scrape_media": True,
     }
 
+
 def save_state(state):
-    with open(STATE_FILE, 'w') as f:
+    with open(STATE_FILE, "w") as f:
         json.dump(state, f)
+
 
 state = load_state()
 
-if not state['api_id'] or not state['api_hash'] or not state['phone']:
-    state['api_id'] = int(input("Enter your API ID: "))
-    state['api_hash'] = input("Enter your API Hash: ")
-    state['phone'] = input("Enter your phone number: ")
+if not state["api_id"] or not state["api_hash"] or not state["phone"]:
+    state["api_id"] = int(input("Enter your API ID: "))
+    state["api_hash"] = input("Enter your API Hash: ")
+    state["phone"] = input("Enter your phone number: ")
     save_state(state)
 
-client = TelegramClient('session', state['api_id'], state['api_hash'])
+client = TelegramClient("session", state["api_id"], state["api_hash"])
+
 
 def sanitize_folder_name(name):
     # Substitui caracteres inválidos por espaço
-    return re.sub(r'[\\/:*?"<>|]', ' ', name)
+    return re.sub(r'[\\/:*?"<>|]', " ", name)
+
 
 def sanitize_file_name(name):
     import os
+
     # Separa nome e extensão
     base, ext = os.path.splitext(name)
     # Substitui caracteres inválidos por '_'
-    base = re.sub(r'[\\/:*?"<>|]', '_', base)
+    base = re.sub(r'[\\/:*?"<>|]', "_", base)
     # Trunca para 20 caracteres
     base = base[:20]
     return base + ext
+
 
 def save_message_to_db(channel, message, sender):
     channel_dir = os.path.join(os.getcwd(), channel)
     os.makedirs(channel_dir, exist_ok=True)
 
-    db_file = os.path.join(channel_dir, f'{channel}.db')
+    db_file = os.path.join(channel_dir, f"{channel}.db")
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
-    c.execute(f'''CREATE TABLE IF NOT EXISTS messages
-                  (id INTEGER PRIMARY KEY, message_id INTEGER, date TEXT, sender_id INTEGER, first_name TEXT, last_name TEXT, username TEXT, message TEXT, media_type TEXT, media_path TEXT, reply_to INTEGER)''')
-    c.execute('''INSERT OR IGNORE INTO messages (message_id, date, sender_id, first_name, last_name, username, message, media_type, media_path, reply_to)
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-              (message.id, 
-               message.date.strftime('%Y-%m-%d %H:%M:%S'), 
-               message.sender_id,
-               getattr(sender, 'first_name', None) if isinstance(sender, User) else None, 
-               getattr(sender, 'last_name', None) if isinstance(sender, User) else None,
-               getattr(sender, 'username', None) if isinstance(sender, User) else None,
-               message.message, 
-               message.media.__class__.__name__ if message.media else None, 
-               None,
-               message.reply_to_msg_id if message.reply_to else None))
+    c.execute(
+        f"""CREATE TABLE IF NOT EXISTS messages
+                  (id INTEGER PRIMARY KEY, message_id INTEGER, date TEXT, sender_id INTEGER, first_name TEXT, last_name TEXT, username TEXT, message TEXT, media_type TEXT, media_path TEXT, reply_to INTEGER)"""
+    )
+    c.execute(
+        """INSERT OR IGNORE INTO messages (message_id, date, sender_id, first_name, last_name, username, message, media_type, media_path, reply_to)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (
+            message.id,
+            message.date.strftime("%Y-%m-%d %H:%M:%S"),
+            message.sender_id,
+            getattr(sender, "first_name", None) if isinstance(sender, User) else None,
+            getattr(sender, "last_name", None) if isinstance(sender, User) else None,
+            getattr(sender, "username", None) if isinstance(sender, User) else None,
+            message.message,
+            message.media.__class__.__name__ if message.media else None,
+            None,
+            message.reply_to_msg_id if message.reply_to else None,
+        ),
+    )
     conn.commit()
     conn.close()
 
+
 MAX_RETRIES = 5
 
+
 async def download_media(channel, message):
-    if not message.media or not state['scrape_media']:
+    if not message.media or not state["scrape_media"]:
         return None
 
     channel_dir = os.path.join(os.getcwd(), channel)
-    media_folder = os.path.join(channel_dir, 'media')
+    media_folder = os.path.join(channel_dir, "media")
     os.makedirs(media_folder, exist_ok=True)
     media_file_name = None
     try:
-        if hasattr(message.media, 'document') and hasattr(message.media.document, 'attributes'):
+        if hasattr(message.media, "document") and hasattr(
+            message.media.document, "attributes"
+        ):
             for attr in message.media.document.attributes:
-                if hasattr(attr, 'file_name'):
+                if hasattr(attr, "file_name"):
                     media_file_name = attr.file_name
                     break
         if not media_file_name:
-            if hasattr(message.media, 'file') and hasattr(message.media.file, 'name'):
+            if hasattr(message.media, "file") and hasattr(message.media.file, "name"):
                 media_file_name = message.media.file.name
         if not media_file_name:
             media_file_name = f"{message.id}.bin"
@@ -131,22 +158,27 @@ async def download_media(channel, message):
                 break
             except (TimeoutError, aiohttp.ClientError, RPCError) as e:
                 retries += 1
-                print(f"Retrying download for message {message.id}. Attempt {retries}...")
-                await asyncio.sleep(2 ** retries)
+                print(
+                    f"Retrying download for message {message.id}. Attempt {retries}..."
+                )
+                await asyncio.sleep(2**retries)
         return media_path
     except Exception as e:
-        log_path = os.path.join(media_folder, 'download_errors.log')
-        with open(log_path, 'a', encoding='utf-8') as logf:
+        log_path = os.path.join(media_folder, "download_errors.log")
+        with open(log_path, "a", encoding="utf-8") as logf:
             logf.write(f"Error saving file for message {message.id}: {e}\n")
         print(f"Error saving file for message {message.id}: {e}")
         return None
 
+
 async def rescrape_media(channel):
     channel_dir = os.path.join(os.getcwd(), channel)
-    db_file = os.path.join(channel_dir, f'{channel}.db')
+    db_file = os.path.join(channel_dir, f"{channel}.db")
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
-    c.execute('SELECT message_id FROM messages WHERE media_type IS NOT NULL AND media_path IS NULL')
+    c.execute(
+        "SELECT message_id FROM messages WHERE media_type IS NOT NULL AND media_path IS NULL"
+    )
     rows = c.fetchall()
     conn.close()
 
@@ -163,36 +195,47 @@ async def rescrape_media(channel):
             if media_path:
                 conn = sqlite3.connect(db_file)
                 c = conn.cursor()
-                c.execute('''UPDATE messages SET media_path = ? WHERE message_id = ?''', (media_path, message_id))
+                c.execute(
+                    """UPDATE messages SET media_path = ? WHERE message_id = ?""",
+                    (media_path, message_id),
+                )
                 conn.commit()
                 conn.close()
-            
+
             progress = (index + 1) / total_messages * 100
-            sys.stdout.write(f"\rReprocessing media for channel {channel}: {progress:.2f}% complete")
+            sys.stdout.write(
+                f"\rReprocessing media for channel {channel}: {progress:.2f}% complete"
+            )
             sys.stdout.flush()
         except Exception as e:
             print(f"Error reprocessing message {message_id}: {e}")
     print()
 
+
 async def get_channel_title(channel_id):
-    if str(channel_id).startswith('-'):
+    if str(channel_id).startswith("-"):
         entity = await client.get_entity(PeerChannel(int(channel_id)))
     else:
         entity = await client.get_entity(channel_id)
     return sanitize_folder_name(entity.title)
 
+
 async def scrape_channel(channel_id, offset_id):
     try:
-        if str(channel_id).startswith('-'):
+        if str(channel_id).startswith("-"):
             entity = await client.get_entity(PeerChannel(int(channel_id)))
         else:
             entity = await client.get_entity(channel_id)
         group_name = sanitize_folder_name(entity.title)
         total_messages = 0
         processed_messages = 0
-        async for message in client.iter_messages(entity, offset_id=offset_id, reverse=True):
+        async for message in client.iter_messages(
+            entity, offset_id=offset_id, reverse=True
+        ):
             sys.stdout.write("\r\033[K")
-            sys.stdout.write(f"Counting messages in: {group_name} - Messages found: {total_messages}")
+            sys.stdout.write(
+                f"Counting messages in: {group_name} - Messages found: {total_messages}"
+            )
             sys.stdout.flush()
             total_messages += 1
         if total_messages == 0:
@@ -200,25 +243,34 @@ async def scrape_channel(channel_id, offset_id):
             return
         last_message_id = None
         processed_messages = 0
-        async for message in client.iter_messages(entity, offset_id=offset_id, reverse=True):
+        async for message in client.iter_messages(
+            entity, offset_id=offset_id, reverse=True
+        ):
             try:
                 sender = await message.get_sender()
                 save_message_to_db(group_name, message, sender)
-                if state['scrape_media'] and message.media:
+                if state["scrape_media"] and message.media:
                     media_path = await download_media(group_name, message)
                     if media_path:
-                        conn = sqlite3.connect(os.path.join(group_name, f'{group_name}.db'))
+                        conn = sqlite3.connect(
+                            os.path.join(group_name, f"{group_name}.db")
+                        )
                         c = conn.cursor()
-                        c.execute('''UPDATE messages SET media_path = ? WHERE message_id = ?''', (media_path, message.id))
+                        c.execute(
+                            """UPDATE messages SET media_path = ? WHERE message_id = ?""",
+                            (media_path, message.id),
+                        )
                         conn.commit()
                         conn.close()
                 last_message_id = message.id
                 processed_messages += 1
                 progress = (processed_messages / total_messages) * 100
                 sys.stdout.write("\r\033[K")
-                sys.stdout.write(f"\rScraping channel: {group_name} - Progress: {progress:.2f}%")
+                sys.stdout.write(
+                    f"\rScraping channel: {group_name} - Progress: {progress:.2f}%"
+                )
                 sys.stdout.flush()
-                state['channels'][str(channel_id)] = last_message_id
+                state["channels"][str(channel_id)] = last_message_id
                 save_state(state)
             except Exception as e:
                 print(f"Error processing message {message.id}: {e}")
@@ -226,70 +278,126 @@ async def scrape_channel(channel_id, offset_id):
     except ValueError as e:
         print(f"Error with channel {channel_id}: {e}")
 
+
 async def continuous_scraping():
     global continuous_scraping_active
     continuous_scraping_active = True
 
     try:
         while continuous_scraping_active:
-            for channel in state['channels']:
+            for channel in state["channels"]:
                 print(f"\nChecking for new messages in channel: {channel}")
-                await scrape_channel(channel, state['channels'][channel])
+                await scrape_channel(channel, state["channels"][channel])
                 print(f"New messages or media scraped from channel: {channel}")
             await asyncio.sleep(60)
     except asyncio.CancelledError:
         print("Continuous scraping stopped.")
         continuous_scraping_active = False
 
+
 async def export_data():
-    for channel in state['channels']:
+    for channel in state["channels"]:
         export_to_csv(channel)
         export_to_json(channel)
 
+
 def export_to_csv(channel):
-    db_file = os.path.join(channel, f'{channel}.db')
-    csv_file = os.path.join(channel, f'{channel}.csv')
+    db_file = os.path.join(channel, f"{channel}.db")
+    csv_file = os.path.join(channel, f"{channel}.csv")
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
-    c.execute('SELECT * FROM messages')
+    c.execute("SELECT * FROM messages")
     rows = c.fetchall()
     conn.close()
 
-    with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+    with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([description[0] for description in c.description])
         writer.writerows(rows)
 
+
 def export_to_json(channel):
-    db_file = os.path.join(channel, f'{channel}.db')
-    json_file = os.path.join(channel, f'{channel}.json')
+    db_file = os.path.join(channel, f"{channel}.db")
+    json_file = os.path.join(channel, f"{channel}.json")
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
-    c.execute('SELECT * FROM messages')
+    c.execute("SELECT * FROM messages")
     rows = c.fetchall()
     conn.close()
 
-    data = [dict(zip([description[0] for description in c.description], row)) for row in rows]
-    with open(json_file, 'w', encoding='utf-8') as f:
+    data = [
+        dict(zip([description[0] for description in c.description], row))
+        for row in rows
+    ]
+    with open(json_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
+
 async def view_channels():
-    if not state['channels']:
+    if not state["channels"]:
         print("No channels to view.")
         return
-    
+
     print("\nCurrent channels:")
-    for channel, last_id in state['channels'].items():
+    for channel, last_id in state["channels"].items():
         print(f"Channel ID: {channel}, Last Message ID: {last_id}")
+
 
 async def list_Channels():
     try:
-        print("\nList of channels joined by account: ")
-        async for dialog in client.iter_dialogs():
-            if (dialog.id != 777000):
-                print(f"* {dialog.title} (id: {dialog.id})")
+        now = datetime.now()
+        filename = f"Canais {now.strftime('%d-%m-%y %H-%M')}.txt"
+        print(f"\nListando Grupos e salvando em '{filename}'...")
+
+        with open(filename, "w", encoding="utf-8") as f:
+            async for dialog in client.iter_dialogs():
+                if not (dialog.is_group or dialog.is_channel):
+                    continue
+
+                try:
+                    entity = await client.get_entity(dialog.id)
+
+                    title = entity.title
+                    print(title)
+                    f.write(f"{title}\n")
+
+                    # Format ID
+                    entity_id_str = str(entity.id)
+                    if entity_id_str.startswith("-100"):
+                        formatted_id = entity_id_str[4:]
+                    else:
+                        formatted_id = entity_id_str
+                    print(formatted_id)
+                    f.write(f"{formatted_id}\n")
+
+                    if getattr(entity, "forum", False):
+                        topics_result = await client(
+                            GetForumTopicsRequest(
+                                channel=entity,
+                                offset_date=datetime.now(),
+                                offset_id=0,
+                                offset_topic=0,
+                                limit=100,
+                            )
+                        )
+                        for topic in topics_result.topics:
+                            if isinstance(topic, ForumTopic):
+                                topic_title = f"\t{topic.title}"
+                                topic_id = f"\t{topic.id}"
+                                print(topic_title)
+                                print(topic_id)
+                                f.write(f"{topic_title}\n")
+                                f.write(f"{topic_id}\n")
+
+                except Exception as e:
+                    error_msg = f"Error processing '{dialog.name}': {e}"
+                    print(error_msg)
+                    f.write(f"{error_msg}\n")
+
+        print(f"Lista de canais salva com sucesso em '{filename}'.")
+
     except Exception as e:
-        print(f"Error processing: {e}")
+        print(f"Error listing channels: {e}")
 
 
 async def manage_channels():
@@ -300,92 +408,100 @@ async def manage_channels():
         print("[R] Remove channel")
         print("[X] Remove ALL Channels")
         print("[S] Scrape all channels")
-        print("[M] Toggle media scraping (currently {})".format(
-            "enabled" if state['scrape_media'] else "disabled"))
+        print(
+            "[M] Toggle media scraping (currently {})".format(
+                "enabled" if state["scrape_media"] else "disabled"
+            )
+        )
         print("[C] Continuous scraping")
         print("[E] Export data")
         print("[V] View saved channels")
-        print("[L] List account channels")
+        print("[L] Listar Grupos")
         print("[Q] Quit")
 
         choice = input("Enter your choice: ").lower()
         match (choice):
-            case 'a':
+            case "a":
                 channel_id = input("Enter channel ID: ")
-                state['channels'][channel_id] = 0
+                state["channels"][channel_id] = 0
                 save_state(state)
                 group_name = await get_channel_title(channel_id)
                 print(f"Added channel {group_name} ({channel_id}).")
-            case 'b':
+            case "b":
                 channels = input("Enter channel IDs separated by comma and space: ")
-                for channel_id in [c.strip() for c in channels.split(',') if c.strip()]:
-                    state['channels'][channel_id] = 0
+                for channel_id in [c.strip() for c in channels.split(",") if c.strip()]:
+                    state["channels"][channel_id] = 0
                     group_name = await get_channel_title(channel_id)
                     print(f"Added channel {group_name} ({channel_id}).")
                 save_state(state)
-            case 'r':
+            case "r":
                 channel_id = input("Enter channel ID to remove: ")
-                if channel_id in state['channels']:
-                    del state['channels'][channel_id]
+                if channel_id in state["channels"]:
+                    del state["channels"][channel_id]
                     save_state(state)
                     print(f"Removed channel {channel_id}.")
                 else:
                     print(f"Channel {channel_id} not found.")
-            case 'x':
-                confirm = input("Are you sure you want to remove ALL channels? (yes/no): ").lower()
-                if confirm == 'yes':
-                    state['channels'] = {}
+            case "x":
+                confirm = input(
+                    "Are you sure you want to remove ALL channels? (yes/no): "
+                ).lower()
+                if confirm == "yes":
+                    state["channels"] = {}
                     save_state(state)
                     print("All channels have been removed.")
                 else:
                     print("Operation cancelled.")
-            case 's':
-                for channel_id in state['channels']:
-                    await scrape_channel(channel_id, state['channels'][channel_id])
-            case 'm':
-                state['scrape_media'] = not state['scrape_media']
+            case "s":
+                for channel_id in state["channels"]:
+                    await scrape_channel(channel_id, state["channels"][channel_id])
+            case "m":
+                state["scrape_media"] = not state["scrape_media"]
                 save_state(state)
                 print(
-                    f"Media scraping {'enabled' if state['scrape_media'] else 'disabled'}.")
-            case 'c':
+                    f"Media scraping {'enabled' if state['scrape_media'] else 'disabled'}."
+                )
+            case "c":
                 global continuous_scraping_active
                 continuous_scraping_active = True
                 task = asyncio.create_task(continuous_scraping())
                 print("Continuous scraping started. Press Ctrl+C to stop.")
                 try:
-                    await asyncio.sleep(float('inf'))
+                    await asyncio.sleep(float("inf"))
                 except KeyboardInterrupt:
                     continuous_scraping_active = False
                     task.cancel()
                     print("\nStopping continuous scraping...")
                     await task
-            case 'e':
-                for channel_id in state['channels']:
+            case "e":
+                for channel_id in state["channels"]:
                     group_name = await get_channel_title(channel_id)
                     export_to_csv(group_name)
                     export_to_json(group_name)
-            case 'v':
-                if not state['channels']:
+            case "v":
+                if not state["channels"]:
                     print("No channels to view.")
                 else:
                     print("\nCurrent channels:")
-                    for channel_id in state['channels']:
+                    for channel_id in state["channels"]:
                         group_name = await get_channel_title(channel_id)
                         print(f"Channel: {group_name} (ID: {channel_id})")
-            case 'q':
+            case "q":
                 print("Quitting...")
                 sys.exit()
-            case 'l':
+            case "l":
                 await list_Channels()
             case _:
                 print("Invalid option.")
+
 
 async def main():
     await client.start()
     while True:
         await manage_channels()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:

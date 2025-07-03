@@ -4,11 +4,19 @@ import json
 import csv
 import asyncio
 from telethon import TelegramClient
-from telethon.tl.types import MessageMediaPhoto, MessageMediaDocument, User, PeerChannel
+from telethon.tl.types import (
+    MessageMediaPhoto,
+    MessageMediaDocument,
+    User,
+    PeerChannel,
+    ForumTopic,
+)
+from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors import FloodWaitError, RPCError
 import aiohttp
 import sys
 import re
+from datetime import datetime
 
 
 def display_ascii_art():
@@ -337,12 +345,42 @@ async def view_channels():
 
 async def list_Channels():
     try:
-        print("\nList of groups and channels joined by account: ")
+        print("\nListando Grupos...")
         async for dialog in client.iter_dialogs():
-            if dialog.is_group or dialog.is_channel:
-                print(f"* {dialog.title} (id: {dialog.id})")
+            if not (dialog.is_group or dialog.is_channel):
+                continue
+
+            try:
+                entity = await client.get_entity(dialog.id)
+
+                print(f"{entity.title}")
+                # Format ID
+                entity_id_str = str(entity.id)
+                if entity_id_str.startswith("-100"):
+                    print(entity_id_str[4:])
+                else:
+                    print(entity_id_str)
+
+                if getattr(entity, "forum", False):
+                    topics_result = await client(
+                        GetForumTopicsRequest(
+                            channel=entity,
+                            offset_date=datetime.now(),
+                            offset_id=0,
+                            offset_topic=0,
+                            limit=100,
+                        )
+                    )
+                    for topic in topics_result.topics:
+                        if isinstance(topic, ForumTopic):
+                            print(f"\t{topic.title}")
+                            print(f"\t{topic.id}")
+
+            except Exception as e:
+                print(f"Error processing '{dialog.name}': {e}")
+
     except Exception as e:
-        print(f"Error processing: {e}")
+        print(f"Error listing channels: {e}")
 
 
 async def manage_channels():
@@ -361,7 +399,7 @@ async def manage_channels():
         print("[C] Continuous scraping")
         print("[E] Export data")
         print("[V] View saved channels")
-        print("[L] List account channels")
+        print("[L] Listar Grupos")
         print("[Q] Quit")
 
         choice = input("Enter your choice: ").lower()
