@@ -220,6 +220,91 @@ async def get_channel_title(channel_id):
     return sanitize_folder_name(entity.title)
 
 
+def normalize_id(channel_id):
+    """Normaliza o ID do canal, adicionando prefixo -100 se necessário"""
+    channel_id_str = str(channel_id)
+    if channel_id_str.startswith('-100'):
+        return channel_id_str
+    elif channel_id_str.isdigit() and len(channel_id_str) >= 6:
+        return f"-100{channel_id_str}"
+    return channel_id_str
+
+
+async def discover_internal_channels(group_id):
+    """Descobre automaticamente todos os canais internos de um grupo"""
+    try:
+        normalized_id = normalize_id(group_id)
+        entity = await client.get_entity(PeerChannel(int(normalized_id)))
+        
+        print(f"\n🔍 Descobrindo canais internos do grupo: {entity.title}")
+        
+        discovered_channels = []
+        
+        # Busca por canais internos nos diálogos
+        async for dialog in client.iter_dialogs():
+            if dialog.is_channel and not dialog.is_group:
+                try:
+                    dialog_entity = await client.get_entity(dialog.id)
+                    
+                    # Verifica se o canal está relacionado ao grupo
+                    # Esta é uma heurística - pode precisar de ajustes baseados na estrutura específica
+                    if hasattr(dialog_entity, 'linked_chat') and dialog_entity.linked_chat:
+                        if str(dialog_entity.linked_chat.id) == str(entity.id):
+                            discovered_channels.append({
+                                'id': str(dialog_entity.id),
+                                'title': dialog_entity.title
+                            })
+                            print(f"  📢 Canal interno encontrado: {dialog_entity.title} (ID: {dialog_entity.id})")
+                    
+                    # Verifica se o canal tem nome similar ao grupo (heurística adicional)
+                    elif entity.title.lower() in dialog_entity.title.lower() or dialog_entity.title.lower() in entity.title.lower():
+                        discovered_channels.append({
+                            'id': str(dialog_entity.id),
+                            'title': dialog_entity.title
+                        })
+                        print(f"  📢 Canal relacionado encontrado: {dialog_entity.title} (ID: {dialog_entity.id})")
+                        
+                except Exception as e:
+                    continue
+        
+        # Busca por tópicos de fórum se o grupo for um fórum
+        if getattr(entity, 'forum', False):
+            try:
+                topics_result = await client(
+                    GetForumTopicsRequest(
+                        channel=entity,
+                        offset_date=datetime.now(),
+                        offset_id=0,
+                        offset_topic=0,
+                        limit=100,
+                    )
+                )
+                
+                for topic in topics_result.topics:
+                    if isinstance(topic, ForumTopic):
+                        # Para tópicos de fórum, usamos o ID do grupo + ID do tópico
+                        topic_full_id = f"{normalized_id}_{topic.id}"
+                        discovered_channels.append({
+                            'id': topic_full_id,
+                            'title': f"{entity.title} - {topic.title}"
+                        })
+                        print(f"  📋 Tópico de fórum encontrado: {topic.title} (ID: {topic.id})")
+                        
+            except Exception as e:
+                print(f"  ⚠️ Erro ao buscar tópicos de fórum: {e}")
+        
+        if discovered_channels:
+            print(f"\n✅ Total de {len(discovered_channels)} canais internos descobertos!")
+            return discovered_channels
+        else:
+            print("  ℹ️ Nenhum canal interno encontrado para este grupo.")
+            return []
+            
+    except Exception as e:
+        print(f"  ❌ Erro ao descobrir canais internos: {e}")
+        return []
+
+
 async def scrape_channel(channel_id, offset_id):
     try:
         if str(channel_id).startswith("-"):
@@ -403,16 +488,11 @@ async def list_Channels():
 async def manage_channels():
     while True:
         print("\nMenu:")
-        print("[A] Add new channel")
-        print("[B] Add multiple channels")
+        print("A - Adicionar grupos (um ou vários IDs ou bloco de texto)")
         print("[R] Remove channel")
         print("[X] Remove ALL Channels")
         print("[S] Scrape all channels")
-        print(
-            "[M] Toggle media scraping (currently {})".format(
-                "enabled" if state["scrape_media"] else "disabled"
-            )
-        )
+        print("[M] Toggle media scraping (currently {})".format("enabled" if state["scrape_media"] else "disabled"))
         print("[C] Continuous scraping")
         print("[E] Export data")
         print("[V] View saved channels")
@@ -422,18 +502,44 @@ async def manage_channels():
         choice = input("Enter your choice: ").lower()
         match (choice):
             case "a":
-                channel_id = input("Enter channel ID: ")
-                state["channels"][channel_id] = 0
-                save_state(state)
-                group_name = await get_channel_title(channel_id)
-                print(f"Added channel {group_name} ({channel_id}).")
-            case "b":
-                channels = input("Enter channel IDs separated by comma and space: ")
-                for channel_id in [c.strip() for c in channels.split(",") if c.strip()]:
-                    state["channels"][channel_id] = 0
-                    group_name = await get_channel_title(channel_id)
-                    print(f"Added channel {group_name} ({channel_id}).")
-                save_state(state)
+                channels_input = input("Digite o(s) ID(s) do(s) grupo(s) ou cole bloco de texto: ")
+                import re
+                # Extrai todos os números com 6 ou mais dígitos (IDs do Telegram)
+                ids = re.findall(r"\b\d{6,}\b", channels_input)
+                nomes_adicionados = []
+                canais_internos_encontrados = []
+                
+                for channel_id in ids:
+                    test_id = normalize_id(channel_id)
+                    try:
+                        group_name = await get_channel_title(test_id)
+                        state["channels"][test_id] = 0
+                        nomes_adicionados.append(group_name)
+                        save_state(state)
+                        print(f"✅ Adicionado grupo: {group_name} ({test_id})")
+                        
+                        # Descobre canais internos automaticamente
+                        internal_channels = await discover_internal_channels(test_id)
+                        if internal_channels:
+                            for internal_channel in internal_channels:
+                                internal_id = internal_channel['id']
+                                internal_title = internal_channel['title']
+                                state["channels"][internal_id] = 0
+                                canais_internos_encontrados.append(internal_title)
+                                print(f"  ➕ Canal interno adicionado: {internal_title} ({internal_id})")
+                            save_state(state)
+                            
+                    except Exception as e:
+                        print(f"❌ Não foi possível adicionar {channel_id}: {e}")
+                
+                if nomes_adicionados:
+                    print(f"\n📋 Resumo da adição:")
+                    print(f"   Grupos adicionados: {', '.join(nomes_adicionados)}")
+                    if canais_internos_encontrados:
+                        print(f"   Canais internos descobertos: {len(canais_internos_encontrados)}")
+                        for canal in canais_internos_encontrados:
+                            print(f"     - {canal}")
+                    print(f"   Total de canais para raspagem: {len(state['channels'])}")
             case "r":
                 channel_id = input("Enter channel ID to remove: ")
                 if channel_id in state["channels"]:

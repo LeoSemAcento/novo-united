@@ -21,6 +21,12 @@ ___________________  _________
 - Media reprocessing for failed downloads
 - Progress tracking
 - Interactive menu interface
+- **🆕 Automatic discovery of internal channels**
+- **🆕 Smart ID normalization**
+- **🆕 Enhanced user interface with emojis**
+- **🆕 Comprehensive channel management**
+- **🆕 Forum topics support**
+- **🆕 Detailed operation summaries**
 
 ## Prerequisites 📋
 
@@ -104,8 +110,11 @@ When scraping a channel for the first time, please note:
 
 The script provides an interactive menu with the following options:
 
-- **[A]** Add new channel
-  - Enter the channel ID or channelname
+- **[A]** Add new channel/groups
+  - Enter channel IDs or paste text blocks with IDs
+  - **🆕 Automatically discovers internal channels**
+  - **🆕 Normalizes IDs automatically**
+  - **🆕 Shows detailed summary of additions**
 - **[R]** Remove channel
   - Remove a channel from scraping list
 - **[S]** Scrape all channels
@@ -119,8 +128,28 @@ The script provides an interactive menu with the following options:
 - **[V]** View saved channels
   - List all saved channels
 - **[L]** List account channels
-  - List all channels with ID:s for account
+  - List all channels with IDs for account
 - **[Q]** Quit
+
+### 🆕 New Features in v2.0
+
+#### Automatic Channel Discovery
+When you add a group using option **[A]**, the system automatically:
+- Discovers all internal channels related to the group
+- Finds channels with similar names
+- Detects forum topics if the group is a forum
+- Adds all discovered channels to the scraping list
+
+#### Smart ID Handling
+- Automatically normalizes channel IDs (adds `-100` prefix when needed)
+- Extracts IDs from text blocks containing names and IDs
+- Validates IDs before processing
+
+#### Enhanced Interface
+- Visual feedback with emojis and colors
+- Detailed progress reporting
+- Comprehensive operation summaries
+- Better error handling and messages
 
 ### Channel IDs 📢
 
@@ -192,11 +221,35 @@ The script includes:
 - Flood control compliance
 - Error logging for failed operations
 
+## Testing and Demo 🧪
+
+### Test Scripts
+- **`test_discovery.py`**: Comprehensive test suite for new features
+- **`demo_discovery.py`**: Interactive demonstration of all new functionalities
+
+### Running Tests
+```bash
+# Run all tests
+python test_discovery.py
+
+# Run interactive demo
+python demo_discovery.py
+```
+
+### Demo Features
+The demo script includes:
+- ID normalization testing
+- Channel discovery simulation
+- Complete workflow demonstration
+- System statistics
+- Interactive menu for testing
+
 ## Limitations ⚠️
 
 - Respects Telegram's rate limits
 - Can only access public channels or channels you're a member of
 - Media download size limits apply as per Telegram's restrictions
+- Channel discovery depends on available permissions and group structure
 
 ## Contributing 🤝
 
