@@ -1,5 +1,6 @@
 from telethon import TelegramClient
-from telethon.tl.types import Channel
+from telethon.tl.types import Channel, PeerChannel
+from telethon.errors.rpcerrorlist import ChannelInvalidError, ChannelPrivateError, FloodWaitError, ServerError, TimeoutError
 import asyncio
 import os
 
@@ -79,9 +80,26 @@ class TelegramSession:
             pass # Esvazia o arquivo
         return "Todos os canais foram removidos."
 
+    # Helper seguro para get_entity
+    async def get_entity_safe(self, peer, channel_id=None):
+        try:
+            return await self.client.get_entity(peer)
+        except (ChannelInvalidError, ChannelPrivateError, ValueError) as e:
+            print(f"[REMOVIDO DEFINITIVO] Canal/tópico {peer} removido do state: {e}")
+            return None
+        except (FloodWaitError, ServerError, TimeoutError) as e:
+            print(f"[TEMPORÁRIO] Falha temporária ao acessar {peer}: {e}. Tente novamente mais tarde.")
+            return None
+        except Exception as e:
+            print(f"[ERRO DESCONHECIDO] Falha ao acessar {peer}: {e}")
+            return None
+
     async def _scrape_channel(self, channel_id, log_callback):
         try:
-            entity = await self.client.get_entity(int(channel_id))
+            entity = await self.get_entity_safe(PeerChannel(int(channel_id)), channel_id)
+            if not entity:
+                log_callback(f"Canal/tópico {channel_id} inválido ou removido. Pulando.")
+                return False
             channel_title = entity.title.replace('/', '_').replace('\\', '_') # Sanitize title for folder name
             channel_folder = f"downloads/{channel_title}_{channel_id}"
             os.makedirs(channel_folder, exist_ok=True)
