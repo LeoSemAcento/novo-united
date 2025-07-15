@@ -1,4 +1,6 @@
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import sqlite3
 import json
 import csv
@@ -14,12 +16,22 @@ from telethon.tl.types import (
 from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors import FloodWaitError, RPCError
 import aiohttp
-import sys
 import re
 from datetime import datetime
 from telethon.errors.rpcerrorlist import ServerError, ChannelInvalidError, ChannelPrivateError, TimeoutError
 import glob
 import threading
+import mimetypes
+from pathlib import Path
+
+# ===== IMPORTAÇÕES DAS FUNÇÕES UTILITÁRIAS =====
+from utils import (
+    logger,
+    sanitize_folder_name_advanced,
+    validate_and_create_path,
+    get_media_info,
+    MIME_EXTENSIONS
+)
 
 
 def display_ascii_art():
@@ -37,6 +49,7 @@ def display_ascii_art():
                          |_|   |_|        
 """
 
+    logger.info("Exibindo arte ASCII do app.")
     print(WHITE + art + RESET)
 
 
@@ -75,9 +88,8 @@ def migrate_state_channels():
             }
             changed = True
     if changed:
-        print("[MIGRATION] State migrado para novo formato de canais.")
+        logger.info("[MIGRATION] State migrado para novo formato de canais.")
         save_state(state)
-
 
 state = load_state()
 migrate_state_channels()
@@ -91,27 +103,6 @@ if not state["api_id"] or not state["api_hash"] or not state["phone"]:
 client = TelegramClient("session", state["api_id"], state["api_hash"])
 
 
-def sanitize_folder_name(name):
-    # Substitui caracteres inválidos por espaço e remove espaços duplicados
-    if not name or not isinstance(name, str):
-        return "Desconhecido"
-    sanitized = re.sub(r'[\\/:*?"<>|]', " ", name)
-    sanitized = re.sub(r'\s+', ' ', sanitized).strip()
-    return sanitized if sanitized else "Desconhecido"
-
-
-def sanitize_file_name(name):
-    import os
-
-    # Separa nome e extensão
-    base, ext = os.path.splitext(name)
-    # Substitui caracteres inválidos por '_'
-    base = re.sub(r'[\\/:*?"<>|]', "_", base)
-    # Trunca para 20 caracteres
-    base = base[:20]
-    return base + ext
-
-
 # Dicionário global de locks por arquivo de banco
 _db_locks = {}
 _db_locks_lock = threading.Lock()
@@ -123,38 +114,62 @@ def get_db_lock(db_file):
         return _db_locks[db_file]
 
 
-async def save_message_to_db(download_path, message, sender, base_dir=None):
-    if base_dir is None:
-        base_dir = os.getcwd()
-    channel_dir = os.path.join(base_dir, download_path)
-    os.makedirs(channel_dir, exist_ok=True)
-    db_file = os.path.join(channel_dir, f"{os.path.basename(download_path)}.db")
-    db_lock = get_db_lock(db_file)
-    async with db_lock:
+def save_message_to_db(folder, message, group_name, channel_origin, media_type=None, media_path=None):
+    db_file = Path(folder) / "mensagens.db"
+    try:
         conn = sqlite3.connect(db_file)
         c = conn.cursor()
         c.execute(
-            f"""CREATE TABLE IF NOT EXISTS messages
-                      (id INTEGER PRIMARY KEY, message_id INTEGER, date TEXT, sender_id INTEGER, first_name TEXT, last_name TEXT, username TEXT, message TEXT, media_type TEXT, media_path TEXT, reply_to INTEGER)"""
+            """CREATE TABLE IF NOT EXISTS messages (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                message_id INTEGER,
+                date TEXT,
+                sender_name TEXT,
+                group_name TEXT,
+                channel_origin TEXT,
+                text TEXT,
+                media_type TEXT,
+                media_path TEXT
+            )"""
         )
+        sender_name = None
+        if hasattr(message, 'sender') and message.sender:
+            sender_name = getattr(message.sender, 'first_name', None) or getattr(message.sender, 'username', None)
         c.execute(
-            """INSERT OR IGNORE INTO messages (message_id, date, sender_id, first_name, last_name, username, message, media_type, media_path, reply_to)
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT INTO messages (message_id, date, sender_name, group_name, channel_origin, text, media_type, media_path)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 message.id,
-                message.date.strftime("%Y-%m-%d %H:%M:%S"),
-                message.sender_id,
-                getattr(sender, "first_name", None) if isinstance(sender, User) else None,
-                getattr(sender, "last_name", None) if isinstance(sender, User) else None,
-                getattr(sender, "username", None) if isinstance(sender, User) else None,
-                message.message,
-                message.media.__class__.__name__ if message.media else None,
-                None,
-                message.reply_to_msg_id if message.reply_to else None,
-            ),
+                str(message.date),
+                sender_name,
+                group_name,
+                channel_origin,
+                getattr(message, 'text', None),
+                media_type,
+                str(media_path) if media_path else None
+            )
         )
         conn.commit()
         conn.close()
+    except Exception as e:
+        print(f"[ERRO][DB] Falha ao salvar mensagem no SQLite: {e}. Salvando em JSON como fallback.")
+        save_message_to_json(folder, message, group_name, channel_origin, media_type, media_path)
+
+
+def save_message_to_json(folder, message, group_name, channel_origin, media_type=None, media_path=None):
+    msg_data = {
+        "id": message.id,
+        "date": str(message.date),
+        "sender_name": getattr(message.sender, 'first_name', None) if hasattr(message, 'sender') and message.sender else None,
+        "group_name": group_name,
+        "channel_origin": channel_origin,
+        "text": getattr(message, 'text', None),
+        "media_type": media_type,
+        "media_path": str(media_path) if media_path else None
+    }
+    path = Path(folder) / "mensagens.json"
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(msg_data, ensure_ascii=False) + "\n")
 
 
 MAX_RETRIES = 5
@@ -208,59 +223,97 @@ async def get_entity_safe(client, peer, channel_id=None):
         return None
 
 
-async def download_media(download_path, message, semaphore, group_name=None, channel_title=None):
-    if not message.media or not state["scrape_media"]:
+async def download_media(download_path, message, semaphore):
+    try:
+        # Usa detecção robusta de mídia
+        media_info = get_media_info(message)
+        if not media_info['filename']:
+            logger.warning(f"Mensagem {message.id} não tem mídia válida")
+            return None
+        # Cria subpasta por tipo
+        final_path = Path(download_path) / "media" / media_info['type']
+        final_path = validate_and_create_path(final_path, f"pasta de mídia {media_info['type']}")
+        filename_base = media_info['filename']
+        extension = media_info['extension']
+        file_path = final_path / f"{filename_base}{extension}"
+        # Evita sobrescrever arquivos
+        counter = 1
+        while file_path.exists():
+            file_path = final_path / f"{filename_base}_{counter}{extension}"
+            counter += 1
+        logger.info(f"📥 Baixando {media_info['type']}: {file_path.name}")
+        async with semaphore:
+            result = await message.download_media(file=str(file_path))
+        if result and file_path.exists():
+            file_size = file_path.stat().st_size
+            if file_size == 0:
+                logger.warning(f"Arquivo baixado está vazio: {file_path}")
+                file_path.unlink()
+                # Registrar falha
+                failed_log = final_path.parent / 'failed_downloads.json'
+                failure_info = {
+                    'message_id': message.id,
+                    'filename': file_path.name,
+                    'path': str(file_path),
+                    'size': 0,
+                    'type': media_info['type'],
+                    'original_filename': media_info.get('original_filename'),
+                    'error': 'Arquivo vazio',
+                    'failed_at': datetime.now().isoformat()
+                }
+                failures = []
+                if failed_log.exists():
+                    with open(failed_log, 'r', encoding='utf-8') as f:
+                        failures = json.load(f)
+                failures.append(failure_info)
+                with open(failed_log, 'w', encoding='utf-8') as f:
+                    json.dump(failures, f, ensure_ascii=False, indent=2)
+                return None
+            logger.info(f"✅ Download concluído: {file_path.name} ({file_size / 1024:.1f} KB)")
+            # Registrar sucesso
+            success_log = final_path.parent / 'download_success.json'
+            download_info = {
+                'message_id': message.id,
+                'filename': file_path.name,
+                'path': str(file_path),
+                'size': file_size,
+                'type': media_info['type'],
+                'original_filename': media_info.get('original_filename'),
+                'download_date': datetime.now().isoformat()
+            }
+            successes = []
+            if success_log.exists():
+                with open(success_log, 'r', encoding='utf-8') as f:
+                    successes = json.load(f)
+            successes.append(download_info)
+            with open(success_log, 'w', encoding='utf-8') as f:
+                json.dump(successes, f, ensure_ascii=False, indent=2)
+            return str(file_path)
+        else:
+            logger.warning(f"[DOWNLOAD] ❌ Falhou para {file_path.name}")
+            # Registrar falha
+            failed_log = final_path.parent / 'failed_downloads.json'
+            failure_info = {
+                'message_id': message.id,
+                'filename': file_path.name,
+                'path': str(file_path),
+                'size': 0,
+                'type': media_info['type'],
+                'original_filename': media_info.get('original_filename'),
+                'error': 'Falha no download',
+                'failed_at': datetime.now().isoformat()
+            }
+            failures = []
+            if failed_log.exists():
+                with open(failed_log, 'r', encoding='utf-8') as f:
+                    failures = json.load(f)
+            failures.append(failure_info)
+            with open(failed_log, 'w', encoding='utf-8') as f:
+                json.dump(failures, f, ensure_ascii=False, indent=2)
+            return None
+    except Exception as e:
+        logger.error(f"[ERRO] Falha ao baixar mídia: {e}", exc_info=True)
         return None
-    channel_dir = os.path.join(DOWNLOADS_BASE, download_path)
-    media_folder = os.path.join(channel_dir, "media")
-    os.makedirs(media_folder, exist_ok=True)
-    message_id = message.id
-    failed_db = os.path.join(channel_dir, "failed.json")
-    failed_ids = set()
-    if os.path.exists(failed_db):
-        try:
-            with open(failed_db, "r", encoding="utf-8") as f:
-                failed_ids = set(json.load(f))
-        except Exception:
-            failed_ids = set()
-    if message_id in failed_ids:
-        print(f"[SKIP] Mensagem {message_id} já marcada como FAILED. Ignorando download.")
-        return None
-    # Determinar nome do arquivo
-    file_name = f"{message_id}.bin"
-    if message.media and hasattr(message.media, 'document') and getattr(message.media.document, 'attributes', None):
-        for attr in message.media.document.attributes:
-            if hasattr(attr, 'file_name'):
-                file_name = attr.file_name
-                break
-    media_path = os.path.join(media_folder, file_name)
-    
-    # Mostrar início do download
-    print(f"[DOWNLOAD] Iniciando download: {file_name} (ID: {message_id})")
-    
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            async with semaphore:
-                print(f"[DOWNLOAD] Tentativa {attempt}/{MAX_RETRIES} para {file_name}...")
-                result_path = await message.download_media(file=media_path)
-            if result_path:
-                print(f"[DOWNLOAD] ✅ Sucesso: {file_name} -> {os.path.abspath(result_path)}")
-                return result_path
-            else:
-                print(f"[DOWNLOAD] ❌ Download retornou None para mensagem {message_id}!")
-        except Exception as e:
-            print(f"[DOWNLOAD] ⚠️ Tentativa {attempt} falhou para {file_name}: {e}")
-            if attempt < MAX_RETRIES:
-                print(f"[DOWNLOAD] Aguardando 2 segundos antes da próxima tentativa...")
-                await asyncio.sleep(2)
-    
-    # Após 5 tentativas, marca como FAILED e loga detalhado
-    print(f"[DOWNLOAD] ❌ Falha definitiva ao baixar {file_name} (ID: {message_id})")
-    failed_ids.add(message_id)
-    with open(failed_db, "w", encoding="utf-8") as f:
-        json.dump(list(failed_ids), f, ensure_ascii=False, indent=2)
-    log_failed_download(download_path, message_id, e, group_name, channel_title, file_name)
-    return None
 
 
 async def rescrape_media(channel):
@@ -278,13 +331,13 @@ async def rescrape_media(channel):
 
     total_messages = len(rows)
     if total_messages == 0:
-        print(f"No media files to reprocess for channel {channel}.")
+        logger.info(f"No media files to reprocess for channel {channel}.")
         return
 
     for index, (message_id,) in enumerate(rows):
         try:
             normalized_id = normalize_id(message_id)
-            print(f"[DEBUG] ID original: {message_id} | ID normalizado: {normalized_id}")
+            logger.debug(f"[DEBUG] ID original: {message_id} | ID normalizado: {normalized_id}")
             entity = await get_entity_safe(client, PeerChannel(int(normalized_id)), normalized_id)
             message = await client.get_messages(entity, ids=message_id)
             media_path = await download_media(channel, message)
@@ -313,16 +366,16 @@ async def get_channel_title(channel_id):
     normalized_id = normalize_id(channel_id)
     entity = await get_entity_safe(client, PeerChannel(int(normalized_id)), normalized_id)
     if entity and hasattr(entity, 'title'):
-        return sanitize_folder_name(entity.title)
+        return sanitize_folder_name_advanced(entity.title)
     return "Desconhecido"
 
 
 def normalize_id(channel_id):
-    """Normaliza o ID do canal, adicionando prefixo -100 se necessário"""
+    """Normaliza o ID do canal, adicionando prefixo -100 se necessário."""
     channel_id_str = str(channel_id)
     if channel_id_str.startswith('-100'):
         return channel_id_str
-    elif channel_id_str.isdigit() and len(channel_id_str) >= 6:
+    elif channel_id_str.isdigit() and len(channel_id_str) >= 9:
         return f"-100{channel_id_str}"
     return channel_id_str
 
@@ -330,12 +383,12 @@ def normalize_id(channel_id):
 async def discover_internal_channels(group_id, group_title):
     try:
         normalized_id = normalize_id(group_id)
-        print(f"[DEBUG] ID original: {group_id} | ID normalizado: {normalized_id}")
+        logger.debug(f"[DEBUG] ID original: {group_id} | ID normalizado: {normalized_id}")
         entity = await get_entity_safe(client, PeerChannel(int(normalized_id)), normalized_id)
         if not entity:
-            print(f"[SKIP] Canal/tópico {normalized_id} inválido ou removido. Pulando.")
+            logger.warning(f"[SKIP] Canal/tópico {normalized_id} inválido ou removido. Pulando.")
             return
-        print(f"\n🔍 Descobrindo canais internos do grupo: {entity.title}")
+        logger.info(f"\n🔍 Descobrindo canais internos do grupo: {entity.title}")
         discovered_channels = []
         # Busca por tópicos de fórum se o grupo for um fórum
         if getattr(entity, 'forum', False):
@@ -356,40 +409,39 @@ async def discover_internal_channels(group_id, group_title):
                             'id': topic_full_id,
                             'title': topic.title
                         })
-                        print(f"  📋 Tópico de fórum encontrado: {topic.title} (ID: {topic.id})")
+                        logger.info(f"  📋 Tópico de fórum encontrado: {topic.title} (ID: {topic.id})")
             except Exception as e:
-                print(f"  ⚠️ Erro ao buscar tópicos de fórum: {e}")
+                logger.warning(f"  ⚠️ Erro ao buscar tópicos de fórum: {e}")
         if discovered_channels:
-            print(f"\n✅ Total de {len(discovered_channels)} canais internos descobertos!")
+            logger.info(f"\n✅ Total de {len(discovered_channels)} canais internos descobertos!")
             return discovered_channels
         else:
-            print("  ℹ️ Nenhum canal interno encontrado para este grupo.")
+            logger.info("  ℹ️ Nenhum canal interno encontrado para este grupo.")
             return []
     except Exception as e:
-        print(f"  ❌ Erro ao descobrir canais internos: {e}")
+        logger.error(f"  ❌ Erro ao descobrir canais internos: {e}")
         return []
 
 
 async def scrape_channel(channel_id, offset_id, download_path):
+    group_name = "Desconhecido"  # Inicializa com valor padrão
     # Robustez: se offset_id for dict, extrair corretamente
     if isinstance(offset_id, dict):
-        print("[WARNING] Chamada incorreta para scrape_channel detectada. Corrigindo parâmetros automaticamente.")
+        logger.warning("[WARNING] Chamada incorreta para scrape_channel detectada. Corrigindo parâmetros automaticamente.")
         last_id = offset_id.get("last_id", 0)
         group_name = offset_id.get("group_name", "Desconhecido")
         channel_title = offset_id.get("channel_title", None)
-        # Buscar nomes reais se possível
         normalized_id = normalize_id(channel_id)
         entity = await get_entity_safe(client, PeerChannel(int(normalized_id)), normalized_id)
         if entity and hasattr(entity, 'title'):
-            channel_title = sanitize_folder_name(entity.title)
+            channel_title = sanitize_folder_name_advanced(entity.title)
         if 'group_name' in offset_id and offset_id['group_name'] != "Desconhecido":
-            group_name = sanitize_folder_name(offset_id['group_name'])
+            group_name = sanitize_folder_name_advanced(offset_id['group_name'])
         elif entity and hasattr(entity, 'title'):
-            group_name = sanitize_folder_name(entity.title)
+            group_name = sanitize_folder_name_advanced(entity.title)
         download_path = get_download_path(group_name, channel_title)
         offset_id = last_id
     try:
-        # Robustez extra: tratar qualquer tipo de channel_id
         original_id = channel_id
         if isinstance(channel_id, dict):
             channel_id = channel_id.get('id') or channel_id.get('channel_id') or list(channel_id.values())[0]
@@ -398,82 +450,76 @@ async def scrape_channel(channel_id, offset_id, download_path):
         try:
             normalized_id = normalize_id(channel_id)
         except Exception as e:
-            print(f"[ERRO] Não foi possível normalizar o ID {original_id}: {e}. Removendo do state.")
+            logger.error(f"[ERRO] Não foi possível normalizar o ID {original_id}: {e}. Removendo do state.")
             if str(original_id) in state["channels"]:
                 del state["channels"][str(original_id)]
                 save_state(state)
             return
-        print(f"[DEBUG] ID original: {original_id} | ID normalizado: {normalized_id}")
+        logger.debug(f"[DEBUG] ID original: {original_id} | ID normalizado: {normalized_id}")
         entity = await get_entity_safe(client, PeerChannel(int(normalized_id)), normalized_id)
         if not entity:
-            print(f"[SKIP] Canal/tópico {normalized_id} inválido ou removido. Pulando.")
+            logger.warning(f"[SKIP] Canal/tópico {normalized_id} inválido ou removido. Pulando.")
             if str(original_id) in state["channels"]:
                 del state["channels"][str(original_id)]
                 save_state(state)
             return
         if entity and hasattr(entity, 'title'):
-            channel_title = sanitize_folder_name(entity.title)
+            channel_name = sanitize_folder_name_advanced(entity.title)
         else:
-            channel_title = "Desconhecido"
-        # Buscar group_name do state se possível
-        group_name = None
-        if str(original_id) in state["channels"]:
-            group_name = state["channels"][str(original_id)].get("group_name", None)
-        if not group_name or group_name == "Desconhecido":
-            group_name = channel_title
-        download_path = get_download_path(group_name, channel_title)
+            channel_name = "Desconhecido"
+        # Adiciona sufixo único se for canal interno
+        channel_suffix = None
+        if isinstance(original_id, str) and '_' in original_id:
+            channel_suffix = original_id.split('_')[1]
+        if channel_suffix:
+            unique_folder_name = f"{channel_name}_{channel_suffix}"
+        else:
+            unique_folder_name = channel_name
+        group_name = unique_folder_name  # Garante valor
+        logger.info(f"🚀 Iniciando scraping para canal: {group_name}")
         total_messages = 0
-        processed_messages = 0
-        semaphore = asyncio.Semaphore(10)
-        try:
-            async for message in client.iter_messages(
-                entity, offset_id=offset_id, reverse=True
-            ):
-                sys.stdout.write("\r\033[K")
-                sys.stdout.write(
-                    f"Counting messages in: {group_name} - Messages found: {total_messages}"
-                )
-                sys.stdout.flush()
-                total_messages += 1
-        except (RPCError, ConnectionError, Exception) as e:
-            print(f"[ERROR] Failed to iterate messages for {group_name}: {e}")
-            return
-        if total_messages == 0:
-            print(f"No messages found in channel {group_name}.")
-            return
-        last_message_id = None
         processed_messages = 0
         download_count = 0
         total_downloads = 0
-        
-        # Primeiro, contar quantos downloads serão necessários
+        semaphore = asyncio.Semaphore(1)  # downloads sequenciais
+        # Contar total de mensagens
         try:
             async for message in client.iter_messages(
                 entity, offset_id=offset_id, reverse=True
             ):
-                if state["scrape_media"] and message.media:
-                    total_downloads += 1
+                total_messages += 1
         except (RPCError, ConnectionError, Exception) as e:
-            print(f"[ERROR] Failed to count downloads for {group_name}: {e}")
+            logger.error(f"[ERROR] Failed to count messages for {group_name}: {e}")
             return
-        
-        print(f"[INFO] Total de {total_downloads} arquivos para download em {group_name}")
-        
-        # Agora processar mensagens e fazer downloads sequenciais
+        logger.info(f"[INFO] Total de {total_messages} mensagens para processar em {group_name}")
+        # Processar mensagens
         try:
             async for message in client.iter_messages(
                 entity, offset_id=offset_id, reverse=True
             ):
                 try:
+                    # Ignorar mensagens sem texto nem mídia
+                    if not (getattr(message, 'text', None) or message.media):
+                        continue
                     sender = await message.get_sender()
-                    save_message_to_db(download_path, message, sender, base_dir=DOWNLOADS_BASE)
-                    
+                    # Detecta origem do canal (encaminhada ou principal)
+                    if hasattr(message, 'forward') and message.forward and hasattr(message.forward, 'chat') and message.forward.chat:
+                        channel_origin = sanitize_folder_name_advanced(getattr(message.forward.chat, 'title', None) or str(getattr(message.forward.chat, 'id', 'Desconhecido')))
+                    else:
+                        channel_origin = "_grupo_principal"
+                    path_completo = os.path.join(DOWNLOADS_BASE, group_name, channel_origin)
+                    validate_and_create_path(os.path.join(path_completo, "media"), "pasta de mídia")
+                    save_message_to_db(path_completo, message, group_name, channel_origin)
+                    # Inicializa variáveis para cada mensagem
+                    media_type = None
+                    media_path = None
                     if state["scrape_media"] and message.media:
                         download_count += 1
-                        print(f"\n[DOWNLOAD {download_count}/{total_downloads}] Processando arquivo...")
-                        await download_media(download_path, message, semaphore, group_name, channel_title)
-                    
-                    last_message_id = message.id
+                        logger.info(f"\n[DOWNLOAD {download_count}] Processando arquivo...")
+                        media_path = await download_media(path_completo, message, semaphore)
+                        # Determina o tipo de mídia se possível
+                        info = get_media_info(message)
+                        media_type = info['type'] if info else None
                     processed_messages += 1
                     progress = (processed_messages / total_messages) * 100
                     sys.stdout.write("\r\033[K")
@@ -481,23 +527,52 @@ async def scrape_channel(channel_id, offset_id, download_path):
                         f"\rScraping channel: {group_name} - Progress: {progress:.2f}% ({processed_messages}/{total_messages})"
                     )
                     sys.stdout.flush()
-                    state["channels"][str(normalized_id)]["last_id"] = last_message_id
-                    save_state(state)
+                    # Atualizar last_id apenas se o canal estiver no state
+                    if str(normalized_id) in state["channels"]:
+                        state["channels"][str(normalized_id)]["last_id"] = message.id
+                        save_state(state)
+                    # Gerar log diário
+                    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
                 except Exception as e:
-                    if "very old message" in str(e) or "too many messages had to be ignored" in str(e):
-                        print(f"[SKIP] Canal/tópico {normalized_id} pulado por mensagens antigas/ignoradas. Avançando last_id.")
-                        # Avança o last_id para pular buraco
-                        state["channels"][normalized_id]["last_id"] = state["channels"][normalized_id]["last_id"] + 100
-                        save_state()
-                        return
-                    else:
-                        print(f"[ERRO] Falha ao processar mensagem: {e}")
+                    logger.error(f"[ERRO] Falha ao processar mensagem {getattr(message, 'id', '?')}: {e}", exc_info=True)
         except (RPCError, ConnectionError, Exception) as e:
-            print(f"[ERROR] Failed to iterate/process messages for {group_name}: {e}")
-        
-        print(f"\n[INFO] Scraping concluído para {group_name}: {processed_messages} mensagens processadas, {download_count} arquivos baixados")
+            logger.error(f"[ERROR] Failed to iterate/process messages for {group_name}: {e}")
+        # Geração de arquivos de metadados
+        channel_folder = Path(DOWNLOADS_BASE) / group_name
+        channel_info_file = channel_folder / 'channel_info.json'
+        statistics_file = channel_folder / 'statistics.json'
+        # channel_info.json
+        channel_info_data = {
+            'channel_id': original_id,
+            'group_name': group_name,
+            'normalized_id': normalized_id,
+            'scraping_date': datetime.now().isoformat(),
+            'folder': str(channel_folder),
+        }
+        try:
+            with open(channel_info_file, 'w', encoding='utf-8') as f:
+                json.dump(channel_info_data, f, ensure_ascii=False, indent=2)
+            logger.info(f"Arquivo channel_info.json salvo em {channel_info_file}")
+        except Exception as e:
+            logger.error(f"Erro ao salvar channel_info.json: {e}")
+        # statistics.json
+        statistics_data = {
+            'total_messages': total_messages,
+            'processed_messages': processed_messages,
+            'downloads': download_count,
+            'scraping_date': datetime.now().isoformat(),
+            'group_name': group_name,
+        }
+        try:
+            with open(statistics_file, 'w', encoding='utf-8') as f:
+                json.dump(statistics_data, f, ensure_ascii=False, indent=2)
+            logger.info(f"Arquivo statistics.json salvo em {statistics_file}")
+        except Exception as e:
+            logger.error(f"Erro ao salvar statistics.json: {e}")
+        logger.info(f"\n[INFO] Scraping concluído para {group_name}: {processed_messages} mensagens processadas, {download_count} arquivos baixados")
+        logger.info(f"📊 Estatísticas finais: total={total_messages}, processadas={processed_messages}, downloads={download_count}")
     except ValueError as e:
-        print(f"Error with channel {normalized_id}: {e}")
+        logger.error(f"Error with channel {normalized_id}: {e}")
 
 
 async def continuous_scraping():
@@ -662,47 +737,58 @@ async def manage_channels():
         print("[Q] Quit")
         choice = input("Enter your choice: ").strip().lower()
         if choice == "a":
-            group_ids = input("Digite o(s) ID(s) do(s) grupo(s) ou cole bloco de texto: ").split()
-            for group_id in group_ids:
+            print("Cole o(s) ID(s) ou bloco de texto contendo os IDs dos grupos/canais a adicionar:")
+            input_text = input()
+            ids = extract_ids_from_text(input_text)
+            if not ids:
+                print("Nenhum ID válido encontrado no texto colado.")
+            for group_id in ids:
                 try:
                     normalized_id = normalize_id(group_id)
-                    print(f"[DEBUG] ID original: {group_id} | ID normalizado: {normalized_id}")
-                    entity = await get_entity_safe(client, PeerChannel(int(normalized_id)), normalized_id)
+                    logger.debug(f"[DEBUG] ID original: {group_id} | ID normalizado: {normalized_id}")
+                    entity = await get_entity_safe(client, PeerChannel(int(normalized_id.split('_')[0])), normalized_id)
                     if not entity:
                         print(f"[SKIP] Canal/tópico {normalized_id} inválido ou removido. Pulando.")
                         continue
-                    group_name = sanitize_folder_name(entity.title)
+                    group_name = sanitize_folder_name_advanced(entity.title)
                     discovered = await discover_internal_channels(normalized_id, group_name)
                     if discovered:
+                        print(f"\n📋 Resumo da adição de canais internos para o grupo '{group_name}':")
                         for ch in discovered:
                             ch_id = ch["id"]
                             ch_title = ch["title"]
-                            state["channels"][str(normalize_id(ch_id))] = {"last_id": 0, "group_name": group_name, "channel_title": ch_title}
-                            print(f"  ➕ Canal interno adicionado: {group_name} / {ch_title} ({ch_id})")
-                        print(f"📋 Resumo da adição:\n   Grupos adicionados: {group_name}\n   Canais internos descobertos: {len(discovered)}")
-                        for ch in discovered:
-                            print(f"     - {ch['title']}")
+                            if str(normalize_id(ch_id)) not in state["channels"]:
+                                state["channels"][str(normalize_id(ch_id))] = {"last_id": 0, "group_name": group_name, "channel_title": ch_title}
+                                print(f"  ➕ Canal interno adicionado: {group_name} / {ch_title} ({ch_id})")
+                        print(f"\n✅ Total de {len(discovered)} canais internos adicionados para o grupo '{group_name}'.\n")
                         print(f"   Total de canais para raspagem: {len(discovered)+1}")
                     else:
                         # Grupo sem canais internos
-                        state["channels"][str(normalize_id(group_id))] = {"last_id": 0, "group_name": group_name}
-                        print(f"✅ Adicionado grupo: {group_name} ({group_id})")
+                        if str(normalize_id(group_id)) not in state["channels"]:
+                            state["channels"][str(normalize_id(group_id))] = {"last_id": 0, "group_name": group_name}
+                            print(f"✅ Adicionado grupo: {group_name} ({group_id})")
                     save_state(state)
                 except Exception as e:
                     print(f"Erro ao adicionar grupo {group_id}: {e}")
         elif choice == "r":
-            channel_id = input("Enter channel ID to remove: ")
-            if channel_id in state["channels"]:
-                del state["channels"][channel_id]
-                save_state(state)
-                print(f"Removed channel {channel_id}.")
+            print("Cole o(s) ID(s) ou bloco de texto contendo os IDs dos canais a remover:")
+            input_text = input()
+            ids = extract_ids_from_text(input_text)
+            removed = []
+            for channel_id in ids:
+                if channel_id in state["channels"]:
+                    del state["channels"][channel_id]
+                    removed.append(channel_id)
+            save_state(state)
+            if removed:
+                print(f"Removidos: {', '.join(removed)}")
             else:
-                print(f"Channel {channel_id} not found.")
+                print("Nenhum canal removido. IDs não encontrados no state.")
         elif choice == "x":
             confirm = input(
                 "Are you sure you want to remove ALL channels? (yes/no): "
             ).lower()
-            if confirm == "yes":
+            if confirm in ["yes", "y", "sim"]:
                 state["channels"] = {}
                 save_state(state)
                 print("All channels have been removed.")
@@ -763,6 +849,15 @@ async def main():
     await client.start()
     while True:
         await manage_channels()
+    try:
+        # Após scraping, executar retry automático
+        logger.info("\n🔄 Executando sistema de retry de downloads falhos...")
+        await retry_failed_downloads(DOWNLOADS_BASE, client, asyncio.Semaphore(1))
+    except Exception as e:
+        logger.critical(f"❌ Erro crítico na execução: {e}", exc_info=True)
+    finally:
+        await client.disconnect()
+        logger.info("\n👋 Cliente desconectado. Scraping finalizado!")
 
 
 def generate_failure_report():
@@ -830,7 +925,7 @@ async def retry_problematic_downloads():
                     print(f"[SKIP] Arquivo já existe: {file_name}")
                     continue
                 # Tentar baixar
-                result = await download_media(download_path, message, asyncio.Semaphore(1), group, channel)
+                result = await download_media(download_path, message, asyncio.Semaphore(1))
                 if result:
                     print(f"[RETRY OK] Baixado: {file_name or message_id}")
                 else:
@@ -848,14 +943,142 @@ async def retry_problematic_downloads():
     print("Retry de arquivos problemáticos finalizado.")
 
 
+async def retry_failed_downloads(base_folder, client, semaphore):
+    """Sistema inteligente de retry para downloads falhos."""
+    logger.info("🔄 Iniciando sistema de retry de downloads falhos...")
+    failed_files = list(Path(base_folder).rglob('failed_downloads.json'))
+    total_retries = 0
+    success_retries = 0
+    for failed_file in failed_files:
+        try:
+            with open(failed_file, 'r', encoding='utf-8') as f:
+                failures = json.load(f)
+            if not failures:
+                continue
+            logger.info(f"📁 Processando {len(failures)} falhas em: {failed_file.parent}")
+            new_failures = []
+            for failure in failures:
+                total_retries += 1
+                try:
+                    # Buscar canal e mensagem
+                    # Tenta inferir o canal pelo caminho do arquivo
+                    channel_folder = failed_file.parent.parent  # .../canal/media
+                    group_name = channel_folder.name
+                    # Tenta buscar o channel_id pelo channel_info.json
+                    channel_info_file = channel_folder / 'channel_info.json'
+                    channel_id = None
+                    if channel_info_file.exists():
+                        with open(channel_info_file, 'r', encoding='utf-8') as f:
+                            info = json.load(f)
+                            channel_id = info.get('channel_id')
+                    if not channel_id:
+                        logger.warning(f"Não foi possível determinar o channel_id para retry em {failed_file}")
+                        new_failures.append(failure)
+                        continue
+                    entity = await get_entity_safe(client, PeerChannel(int(str(channel_id).split('_')[0])), channel_id)
+                    if not entity:
+                        logger.warning(f"Entidade não encontrada para channel_id {channel_id}")
+                        new_failures.append(failure)
+                        continue
+                    message_id = failure['message_id']
+                    message = await client.get_messages(entity, ids=message_id)
+                    if not message:
+                        logger.warning(f"Mensagem {message_id} não encontrada no canal {channel_id}")
+                        new_failures.append(failure)
+                        continue
+                    logger.info(f"🔄 Retry para mensagem {message_id} em {group_name}")
+                    result = await download_media(channel_folder, message, semaphore)
+                    if result:
+                        logger.info(f"✅ Retry bem-sucedido para mensagem {message_id} em {group_name}")
+                        success_retries += 1
+                        # Registrar sucesso
+                        success_log = channel_folder / 'download_success.json'
+                        download_info = {
+                            'message_id': message.id,
+                            'filename': Path(result).name,
+                            'path': str(result),
+                            'size': Path(result).stat().st_size,
+                            'type': failure.get('type'),
+                            'original_filename': failure.get('original_filename'),
+                            'download_date': datetime.now().isoformat(),
+                            'retry': True
+                        }
+                        successes = []
+                        if success_log.exists():
+                            with open(success_log, 'r', encoding='utf-8') as f:
+                                successes = json.load(f)
+                        successes.append(download_info)
+                        with open(success_log, 'w', encoding='utf-8') as f:
+                            json.dump(successes, f, ensure_ascii=False, indent=2)
+                        continue  # Não adiciona à lista de falhas
+                    else:
+                        logger.warning(f"❌ Retry falhou para mensagem {message_id} em {group_name}")
+                        failure['retry_failed_at'] = datetime.now().isoformat()
+                        new_failures.append(failure)
+                except Exception as e:
+                    logger.error(f"Erro no retry: {e}", exc_info=True)
+                    failure['retry_failed_at'] = datetime.now().isoformat()
+                    new_failures.append(failure)
+            # Atualiza arquivo de falhas
+            if new_failures:
+                with open(failed_file, 'w', encoding='utf-8') as f:
+                    json.dump(new_failures, f, ensure_ascii=False, indent=2)
+            else:
+                failed_file.unlink()
+        except Exception as e:
+            logger.error(f"Erro ao processar arquivo de falhas {failed_file}: {e}", exc_info=True)
+    logger.info(f"✅ Retry concluído: {success_retries}/{total_retries} sucessos")
+
+
 # Função utilitária para obter o caminho de download correto
 
 def get_download_path(group_name, channel_title=None):
-    group_name = sanitize_folder_name(group_name)
+    group_name = sanitize_folder_name_advanced(group_name)
     if channel_title:
-        channel_title = sanitize_folder_name(channel_title)
+        channel_title = sanitize_folder_name_advanced(channel_title)
         return os.path.join(group_name, channel_title)
     return group_name
+
+
+def log_diario(folder, message, group_name, channel_origin, media_type=None, media_path=None):
+    """Gera um log diário por grupo/canal, com resumo das mensagens processadas."""
+    from datetime import datetime
+    log_name = f"log_{datetime.now().strftime('%Y-%m-%d')}.md"
+    log_path = Path(folder) / log_name
+    resumo = f"- [{message.date.strftime('%H:%M:%S')}] ID: {message.id} | "
+    if getattr(message, 'text', None):
+        resumo += f"Texto: {message.text[:50].replace('\n',' ')}"
+    if media_type and media_path:
+        resumo += f" | Mídia: {media_type} ({media_path})"
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(resumo + "\n")
+
+
+def extract_ids_from_text(text: str):
+    """Extrai todos os IDs de canais/grupos do Telegram de um bloco de texto, aceitando -100... e IDs positivos longos."""
+    # Aceita -1001234567890, 1234567890, 1808506136, etc
+    pattern = r'(-100\d{10,}|[1-9]\d{8,})'
+    return re.findall(pattern, text)
+
+
+def clean_temp_files(base_folder):
+    """Remove arquivos .test_write e pastas de teste temporárias."""
+    logger.info("Limpando arquivos temporários...")
+    for path in Path(base_folder).rglob('.test_write'):
+        try:
+            path.unlink()
+            logger.info(f"Removido: {path}")
+        except Exception as e:
+            logger.warning(f"Falha ao remover {path}: {e}")
+    # Remove pastas de teste
+    test_dirs = [p for p in Path(base_folder).glob('test*') if p.is_dir()]
+    for d in test_dirs:
+        try:
+            import shutil
+            shutil.rmtree(d)
+            logger.info(f"Pasta de teste removida: {d}")
+        except Exception as e:
+            logger.warning(f"Falha ao remover pasta {d}: {e}")
 
 
 if __name__ == "__main__":

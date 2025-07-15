@@ -1,0 +1,53 @@
+.gitignore
+Canais 03-07-25 13-08.txt
+Canais 05-07-25 00-29.txt
+Canais 05-07-25 00-45.txt
+Canais 06-07-25 16-34.txt
+Canais 06-07-25 17-02.txt
+README.md
+__pycache__/db.cpython-313.pyc
+__pycache__/export.cpython-313.pyc
+__pycache__/media.cpython-313.pyc
+__pycache__/scraper.cpython-313.pyc
+__pycache__/utils.cpython-313.pyc
+canais.txt
+changelog.md
+channels_state.json
+claude_erros.md
+codigos-leo.txt
+config.json
+db.py
+export.py
+git-status.log
+logs/errors.log
+logs/scraper_20250710.log
+logs/scraper_20250711.log
+logs/scraper_20250712.log
+logs/scraper_20250714.log
+main-scrap/.github/FUNDING.yml
+main-scrap/.gitignore
+main-scrap/.vscode/extensions.json
+main-scrap/CHANGELOG.md
+main-scrap/LICENSE
+main-scrap/README.md
+main-scrap/canais.txt
+main-scrap/demo_discovery.py
+main-scrap/gui_app.py
+main-scrap/logs-guia.txt
+main-scrap/requirements.txt
+main-scrap/state.json
+main-scrap/telegram-scraper.py
+main-scrap/telegram_client.py
+main-scrap/test_discovery.py
+main.py
+media.py
+revisao_claude.md
+revisao_placeholders.md
+scraper.py
+scraper_session.session
+session.session
+state.json
+test_folders.py
+tests/test_retry.py
+tests/test_utils.py
+utils.py

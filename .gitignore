@@ -4,4 +4,5 @@
 session.session
 session.session-journal
 downloads/
-iniciar-taskmaster.bat 
+iniciar-taskmaster.bat downloads/
+downloads/

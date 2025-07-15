@@ -1,0 +1,43 @@
+
+    Directory: D:\Github\novo-united
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          12/07/2025    20:38                __pycache__
+d----          05/07/2025    10:59                .taskmaster
+d----          04/07/2025    08:49                .venv
+d----          12/07/2025    20:32                downloads
+d----          14/07/2025    03:31                logs
+d----          10/07/2025    07:40                main-scrap
+d----          10/07/2025    01:30                tests
+-a---          04/07/2025    11:19            468 .env
+-a---          08/07/2025    03:25            154 .gitignore
+-a---          15/07/2025    03:43              0 arquivos_locais.txt
+-a---          15/07/2025    03:43           1136 arquivos_remotos.txt
+-a---          05/07/2025    10:59          45913 Canais 03-07-25 13-08.txt
+-a---          05/07/2025    00:30          46172 Canais 05-07-25 00-29.txt
+-a---          05/07/2025    00:46          46222 Canais 05-07-25 00-45.txt
+-a---          06/07/2025    16:35          45775 Canais 06-07-25 16-34.txt
+-a---          06/07/2025    17:03          45833 Canais 06-07-25 17-02.txt
+-a---          10/07/2025    07:43              0 canais.txt
+-a---          03/07/2025    13:14            812 changelog.md
+-a---          12/07/2025    20:31            105 channels_state.json
+-a---          10/07/2025    01:06           3532 claude_erros.md
+-a---          07/07/2025    07:12           3565 codigos-leo.txt
+-a---          12/07/2025    20:30             79 config.json
+-a---          12/07/2025    20:36           1999 db.py
+-a---          07/07/2025    12:09           1281 export.py
+-a---          05/07/2025    22:02            437 git-status.log
+-a---          15/07/2025    03:28          14192 main.py
+-a---          07/07/2025    12:03           1420 media.py
+-a---          10/07/2025    01:31           2842 README.md
+-a---          10/07/2025    00:58          44022 revisao_claude.md
+-a---          10/07/2025    00:58            912 revisao_placeholders.md
+-a---          12/07/2025    20:32          28672 scraper_session.session
+-a---          12/07/2025    20:36           1845 scraper.py
+-a---          14/07/2025    21:43         475136 session.session
+-a---          14/07/2025    21:44         156464 session.session-journal
+-a---          14/07/2025    03:33            764 state.json
+-a---          10/07/2025    01:19            932 test_folders.py
+-a---          11/07/2025    22:57          13794 utils.py
+

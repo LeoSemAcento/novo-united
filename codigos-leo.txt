@@ -1,0 +1,82 @@
+Entendi! Você quer duas melhorias principais:
+
+1. Criar subpastas para os canais dentro da pasta principal do grupo, separando mídia e mensagens conforme a origem.
+2. Resolver os erros de download, como '-1002624431019', que parecem ser IDs ou falhas no processo de salvar arquivos.
+
+Para te ajudar de forma eficaz, segue abaixo os trechos essenciais do código e orientações:
+
+---
+
+# 1. Definição do nome do grupo e criação da pasta sanitizada
+
+def sanitize_folder_name(name):
+    if not name or not isinstance(name, str):
+        return "Desconhecido"
+    sanitized = re.sub(r'[\\/:*?"<>|]', " ", name)
+    sanitized = re.sub(r'\s+', ' ', sanitized).strip()
+    return sanitized if sanitized else "Desconhecido"
+
+# Exemplo de uso ao adicionar grupo/canal:
+group_name = sanitize_folder_name(entity.title)
+channel_title = sanitize_folder_name(channel_entity.title)
+
+# Criação da estrutura de pastas:
+download_path = os.path.join(group_name, channel_title)
+os.makedirs(os.path.join(DOWNLOADS_BASE, download_path, "media"), exist_ok=True)
+
+---
+
+# 2. Loop de mensagens e tratamento de armazenamento
+
+async for message in client.iter_messages(entity, offset_id=offset_id, reverse=True):
+    try:
+        sender = await message.get_sender()
+        save_message_to_db(download_path, message, sender, base_dir=DOWNLOADS_BASE)
+        if state["scrape_media"] and message.media:
+            await download_media(download_path, message, semaphore, group_name, channel_title)
+    except Exception as e:
+        # Tratamento de erro detalhado
+        print(f"[ERRO] Falha ao processar mensagem: {e}")
+        import traceback
+        traceback.print_exc()
+
+---
+
+# 3. Função de download de mídia com retry e logs detalhados
+
+async def download_media(download_path, message, semaphore, group_name=None, channel_title=None):
+    ...
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            async with semaphore:
+                result_path = await message.download_media(file=media_path)
+            if result_path:
+                print(f"[DOWNLOAD] ✅ Sucesso: {file_name} -> {os.path.abspath(result_path)}")
+                return result_path
+            else:
+                print(f"[DOWNLOAD] ❌ Download retornou None para mensagem {message_id}!")
+        except Exception as e:
+            print(f"[DOWNLOAD] ⚠️ Tentativa {attempt} falhou para {file_name}: {e}")
+            if 'The message with ID' in str(e) or 'not found' in str(e) or 'very old message' in str(e) or 'too many messages had to be ignored' in str(e):
+                print(f"[DOWNLOAD] Ignorando mensagem não disponível: {file_name} (ID: {message_id})")
+                return None
+            if attempt < MAX_RETRIES:
+                print(f"[DOWNLOAD] Aguardando 2 segundos antes da próxima tentativa...")
+                await asyncio.sleep(2)
+    print(f"[DOWNLOAD] ❌ Falha definitiva ao baixar {file_name} (ID: {message_id})")
+    # Log detalhado do erro
+    import traceback
+    traceback.print_exc()
+    return None
+
+---
+
+# 4. Recomendações para melhorias robustas
+- Sempre sanitizar nomes de pastas e arquivos.
+- Criar subpastas para cada canal dentro do grupo.
+- Logar erros detalhadamente (usar traceback.print_exc()).
+- Implementar retry inteligente para downloads.
+- Nomear arquivos de mídia com timestamp para evitar conflitos.
+- Separar mensagens e mídias por canal.
+
+Se precisar de exemplos completos ou quiser que eu integre tudo em um script só, é só pedir! 

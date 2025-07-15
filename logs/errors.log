@@ -1,0 +1,1912 @@
+2025-07-10 01:45:49,028 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 16644: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:45:49,589 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 19144: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:25,724 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 19236: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:26,373 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 20635: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:27,190 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 21003: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:27,543 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 21150: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:27,710 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 21151: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:27,809 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 21154: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:32,124 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 21248: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:32,836 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 21456: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:47,603 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 22343: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:47,985 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 22637: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:48,970 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 22961: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:46:59,612 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 23549: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:00,270 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 24354: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:00,964 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25146: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:01,748 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25701: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:02,469 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25804: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:06,666 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25805: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:13,214 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25829: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:14,085 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25947: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:14,286 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25949: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:14,977 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 25950: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:29,071 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 26431: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:33,006 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 26567: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:33,962 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 26593: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:35,133 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 26684: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:36,254 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 26812: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:36,950 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 26813: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:37,998 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 27140: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:38,374 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 27601: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:39,271 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 27818: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:40,315 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 27991: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:41,001 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 28098: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:47:42,295 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 28173: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:48:55,678 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 30613: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:48:57,558 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 30704: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:49:05,459 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 31904: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:49:06,563 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 32027: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:49:07,712 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 35485: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:50:52,434 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 35487: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:50:53,010 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37050: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:50:53,579 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37052: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:50:54,331 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37195: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:50:55,738 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37331: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:10,008 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37492: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:10,403 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37646: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:38,377 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37651: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:38,884 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37654: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:39,604 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37666: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:40,507 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37676: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:40,930 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37679: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:41,550 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37885: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:41,983 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37914: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:42,632 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 37985: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:43,161 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 38055: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:44,206 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 38312: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:44,823 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 38342: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:45,725 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 38586: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:46,114 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 38751: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:46,717 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 38905: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:47,764 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39020: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:48,702 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39203: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:50,425 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39301: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:50,983 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39318: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:51,339 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39594: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:51,918 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39595: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:52,844 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39596: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:53,496 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 39808: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:54,492 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40229: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:51:55,099 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40317: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:08,731 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40327: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:09,550 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40435: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:16,054 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40444: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:16,394 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40485: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:17,145 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40714: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:18,056 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 40760: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:18,834 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41120: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:19,520 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41131: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:20,304 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41268: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:20,648 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41269: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:21,567 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41387: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:22,545 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41444: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:24,102 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41541: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:25,155 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41566: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:31,961 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41569: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:33,178 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41681: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:33,812 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41699: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:35,064 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41700: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:36,689 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41703: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:37,730 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41712: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:39,084 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41725: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:39,608 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41771: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:40,738 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41786: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:42,231 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 41891: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:42,965 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 42998: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:43,971 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 43116: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:45,063 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 43119: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:45,508 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 43121: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:46,751 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 43179: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:47,569 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44018: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:49,454 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44095: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:50,215 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44170: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:54,445 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44174: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:54,677 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44367: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:55,343 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44436: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:56,193 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44437: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:57,059 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44444: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:57,494 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44591: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:58,484 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44607: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:59,723 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44612: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:52:59,966 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44613: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:00,833 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44635: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:01,258 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44692: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:01,676 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 44787: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:02,414 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45009: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:02,858 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45014: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:03,429 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45075: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:03,873 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45076: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:04,292 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45077: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:05,011 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45080: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:05,257 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45081: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:05,618 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45092: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:06,048 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45093: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:06,466 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45100: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:07,371 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45101: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:08,546 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45104: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:53,315 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45127: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:53,560 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45139: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:53,707 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45188: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:54,310 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45189: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:54,979 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 45194: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:55,276 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 65336: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:55,941 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 66815: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:56,374 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 66913: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:56,896 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 93027: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:57,578 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 93063: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:57,866 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 93136: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 01:53:58,754 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 93158: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:00:20,434 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 261689: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:00:22,333 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 262979: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:00:22,955 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 263190: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:00:55,467 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270634: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:01:26,410 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270635: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:01:56,706 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270636: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:02:27,066 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270637: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:02:59,953 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270638: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:03:31,719 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270639: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:04:05,944 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270640: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:04:37,520 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270641: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:05:09,493 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270642: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:05:41,330 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270643: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:06:13,843 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270644: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:06:45,739 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270645: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:07:17,096 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270646: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:07:48,288 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270647: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:08:20,120 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270648: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:08:51,577 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270649: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:09:21,963 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270650: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:09:52,321 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270651: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:10:22,316 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270652: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:10:52,969 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270653: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:11:23,107 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270654: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:11:53,619 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270655: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:12:23,346 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270656: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:12:53,097 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270657: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:13:22,847 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270658: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:13:53,014 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270659: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:14:22,728 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270660: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:14:53,137 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270661: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:15:23,590 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270662: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:15:53,894 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270663: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:16:23,373 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270664: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:16:53,262 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270665: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:17:23,065 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270666: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:17:53,512 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270667: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:18:25,133 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270668: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:18:56,964 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270669: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:19:27,949 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270670: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:19:58,786 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270671: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:20:28,618 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270672: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:20:58,871 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270673: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:21:29,059 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270674: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:21:59,755 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270675: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:22:29,954 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270676: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:23:00,203 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270677: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:23:30,295 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270678: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:24:01,094 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270679: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:24:30,962 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270680: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:25:01,164 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270681: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:25:30,958 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270682: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:26:00,712 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270683: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:26:30,742 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270684: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:27:00,994 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270685: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:27:30,561 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270686: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:28:00,315 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270687: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:28:30,045 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270688: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:29:00,951 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270689: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:29:30,612 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270690: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:30:01,106 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270691: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:30:31,151 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270692: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:31:00,970 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270693: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:31:30,414 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270694: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:32:00,509 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270695: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:32:30,534 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270696: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:33:01,024 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270697: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:33:30,550 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270698: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:34:02,136 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270699: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:34:31,676 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270700: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:35:01,928 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270701: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:35:31,650 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270702: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:36:01,588 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270703: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:36:31,756 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270704: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:37:01,500 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270705: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:37:31,201 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270706: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:38:01,054 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270707: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:38:30,517 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270708: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:39:00,687 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270709: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:39:30,891 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270710: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:40:00,933 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270711: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:40:31,270 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270712: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:41:00,903 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270713: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:41:31,021 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270714: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:42:00,695 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270715: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:42:30,272 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270716: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:42:59,753 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270717: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:43:29,089 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270718: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:43:58,857 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270719: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:44:28,314 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270720: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:44:58,198 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270721: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:45:28,097 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270722: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:45:57,728 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270723: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:46:27,941 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270724: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:46:57,881 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270725: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:47:27,980 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270726: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:47:58,356 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270727: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:48:28,434 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270728: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:48:58,880 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270729: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:49:28,885 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270730: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:49:59,015 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270731: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:50:28,823 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270732: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:50:58,957 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270733: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:51:29,486 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270734: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:51:58,981 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270735: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:52:28,926 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270736: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:52:58,362 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270737: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:53:28,188 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270738: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:53:58,095 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270739: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:54:34,410 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270740: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:55:07,218 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270741: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:55:39,655 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270742: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:56:13,105 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270743: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:56:45,471 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270744: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:57:17,869 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270745: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:57:49,640 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270746: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:58:21,430 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270747: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:58:52,255 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270748: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:59:23,068 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270749: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 02:59:54,889 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270750: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:00:27,400 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270751: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:00:59,417 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270752: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:01:30,341 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270753: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:02:02,670 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270754: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:02:35,203 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270755: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:03:07,470 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270756: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:03:37,847 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270757: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:04:09,035 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270758: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:04:39,040 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270759: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:05:09,833 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270760: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:05:39,756 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270761: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:06:11,111 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270762: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:06:27,989 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270763: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:06:30,037 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270785: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:07:01,918 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 270983: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:07:19,510 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 271075: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:07:46,413 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 271139: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:08:16,999 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 271150: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-10 03:08:47,352 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao processar mensagem 271154: name 'media_type' is not defined
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 529, in scrape_channel
+    log_diario(path_completo, message, group_name, channel_origin, media_type, media_path)
+                                                                   ^^^^^^^^^^
+NameError: name 'media_type' is not defined
+2025-07-13 09:44:45,342 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao baixar mídia: Connection to Telegram failed 5 time(s)
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 246, in download_media
+    result = await message.download_media(file=str(file_path))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\tl\custom\message.py", line 870, in download_media
+    return await self._client.download_media(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 434, in download_media
+    return await self._download_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        media, file, date, thumb, progress_callback
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 868, in _download_photo
+    result = await self.download_file(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 513, in download_file
+    return await self._download_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 563, in _download_file
+    async for chunk in self._iter_download(
+    ...<10 lines>...
+                await r
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\requestiter.py", line 74, in __anext__
+    if await self._load_next_chunk():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 76, in _load_next_chunk
+    cur = await self._request()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 86, in _request
+    result = await self._client._call(self._sender, self.request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+ConnectionError: Connection to Telegram failed 5 time(s)
+2025-07-13 09:44:46,640 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao baixar mídia: Cannot send requests while disconnected
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 246, in download_media
+    result = await message.download_media(file=str(file_path))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\tl\custom\message.py", line 870, in download_media
+    return await self._client.download_media(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 434, in download_media
+    return await self._download_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        media, file, date, thumb, progress_callback
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 868, in _download_photo
+    result = await self.download_file(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 513, in download_file
+    return await self._download_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 563, in _download_file
+    async for chunk in self._iter_download(
+    ...<10 lines>...
+                await r
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\requestiter.py", line 74, in __anext__
+    if await self._load_next_chunk():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 76, in _load_next_chunk
+    cur = await self._request()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 86, in _request
+    result = await self._client._call(self._sender, self.request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 72, in _call
+    future = sender.send(request, ordered=ordered)
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\network\mtprotosender.py", line 179, in send
+    raise ConnectionError('Cannot send requests while disconnected')
+ConnectionError: Cannot send requests while disconnected
+2025-07-13 09:44:48,225 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao baixar mídia: Cannot send requests while disconnected
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 246, in download_media
+    result = await message.download_media(file=str(file_path))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\tl\custom\message.py", line 870, in download_media
+    return await self._client.download_media(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 434, in download_media
+    return await self._download_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        media, file, date, thumb, progress_callback
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 868, in _download_photo
+    result = await self.download_file(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 513, in download_file
+    return await self._download_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 563, in _download_file
+    async for chunk in self._iter_download(
+    ...<10 lines>...
+                await r
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\requestiter.py", line 74, in __anext__
+    if await self._load_next_chunk():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 76, in _load_next_chunk
+    cur = await self._request()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 86, in _request
+    result = await self._client._call(self._sender, self.request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 72, in _call
+    future = sender.send(request, ordered=ordered)
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\network\mtprotosender.py", line 179, in send
+    raise ConnectionError('Cannot send requests while disconnected')
+ConnectionError: Cannot send requests while disconnected
+2025-07-13 09:44:50,404 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao baixar mídia: Cannot send requests while disconnected
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 246, in download_media
+    result = await message.download_media(file=str(file_path))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\tl\custom\message.py", line 870, in download_media
+    return await self._client.download_media(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 434, in download_media
+    return await self._download_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        media, file, date, thumb, progress_callback
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 868, in _download_photo
+    result = await self.download_file(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 513, in download_file
+    return await self._download_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 563, in _download_file
+    async for chunk in self._iter_download(
+    ...<10 lines>...
+                await r
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\requestiter.py", line 74, in __anext__
+    if await self._load_next_chunk():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 76, in _load_next_chunk
+    cur = await self._request()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 86, in _request
+    result = await self._client._call(self._sender, self.request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 72, in _call
+    future = sender.send(request, ordered=ordered)
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\network\mtprotosender.py", line 179, in send
+    raise ConnectionError('Cannot send requests while disconnected')
+ConnectionError: Cannot send requests while disconnected
+2025-07-13 09:44:50,885 - TelegramScraper.Errors - ERROR - [error:63] - [ERRO] Falha ao baixar mídia: Cannot send requests while disconnected
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 246, in download_media
+    result = await message.download_media(file=str(file_path))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\tl\custom\message.py", line 870, in download_media
+    return await self._client.download_media(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 434, in download_media
+    return await self._download_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        media, file, date, thumb, progress_callback
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 868, in _download_photo
+    result = await self.download_file(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 513, in download_file
+    return await self._download_file(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 563, in _download_file
+    async for chunk in self._iter_download(
+    ...<10 lines>...
+                await r
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\requestiter.py", line 74, in __anext__
+    if await self._load_next_chunk():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 76, in _load_next_chunk
+    cur = await self._request()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\downloads.py", line 86, in _request
+    result = await self._client._call(self._sender, self.request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 72, in _call
+    future = sender.send(request, ordered=ordered)
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\network\mtprotosender.py", line 179, in send
+    raise ConnectionError('Cannot send requests while disconnected')
+ConnectionError: Cannot send requests while disconnected
+2025-07-13 09:44:50,920 - TelegramScraper.Errors - ERROR - [error:63] - [ERROR] Failed to iterate/process messages for IA_Coding_Club_13: Cannot send requests while disconnected
+Traceback (most recent call last):
+  File "D:\Github\novo-united\main-scrap\telegram-scraper.py", line 497, in scrape_channel
+    async for message in client.iter_messages(
+    ...<39 lines>...
+            logger.error(f"[ERRO] Falha ao processar mensagem {getattr(message, 'id', '?')}: {e}", exc_info=True)
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\requestiter.py", line 74, in __anext__
+    if await self._load_next_chunk():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\messages.py", line 184, in _load_next_chunk
+    r = await self.client(self.request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\client\users.py", line 72, in _call
+    future = sender.send(request, ordered=ordered)
+  File "C:\Users\Home\AppData\Roaming\Python\Python313\site-packages\telethon\network\mtprotosender.py", line 179, in send
+    raise ConnectionError('Cannot send requests while disconnected')
+ConnectionError: Cannot send requests while disconnected
